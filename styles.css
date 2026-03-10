@@ -14,8 +14,27 @@ html, body{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    
+    scrollbar-width: none;
+    overflow-y: scroll;
 }
+
+html::-webkit-scrollbar {
+    width: 8px; /* keeps only ONE scrollbar on Chrome */
+     
+    overflow-x: hidden;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 p, li{
     font-family: "Poppins", sans-serif;
     font-size: 1.1em;
@@ -644,6 +663,11 @@ button:hover{
     nav {
         width: 100%;
         padding: 10px 15px;
+        display: flex;
+    }
+    .ancre {
+    padding: 10px;
+    
     }
  .logo {
         display: none;
